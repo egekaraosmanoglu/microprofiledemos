@@ -93,3 +93,27 @@ Allow the participation in distributed tracing of your requests through various 
 A type safe invocation of HTTP rest endpoints. Specification [here](https://microprofile.io/project/eclipse/microprofile-rest-client)
 
 The example calls one endpoint from another JAX-RS resource where generated Rest Client is injected as CDI bean.
+
+
+
+
+to deploy to openshift:
+
+go to https://learn.openshift.com/playgrounds/openshift45/
+
+
+1- since it has Dockerfile  openshift will create te container with Dockerfile
+
+oc new-app --as-deployment-config --name demoapp https://github.com/egekaraosmanoglu/microprofiledemos --context-dir wildfly33/service-a
+oc logs -f bc/demoapp
+oc expose svc/demoapp
+
+
+
+to run locally:
+
+https://github.com/wildfly-extras/wildfly-jar-maven-plugin/tree/2.0.0.Alpha4/examples/mp-config
+
+To build: mvn package
+To run: mvn wildfly-jar:run
+Access the application: http://127.0.0.1:8080/test-config

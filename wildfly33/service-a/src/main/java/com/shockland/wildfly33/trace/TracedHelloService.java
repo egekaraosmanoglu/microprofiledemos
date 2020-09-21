@@ -16,6 +16,7 @@ public class TracedHelloService {
     @Inject
     @ConfigProperty(name="app.hello", defaultValue = "Hello")
     private String hello;
+    
     private final Random random = new Random();
 
     public String createHelloMessage(String name) {
