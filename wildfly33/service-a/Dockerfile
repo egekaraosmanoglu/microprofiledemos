@@ -16,8 +16,9 @@ ADD   https://github.com/egekaraosmanoglu/microprofiledemos/raw/master/wildfly33
 
 COPY  run-app.sh /opt/app-root/bin/
 
-RUN   chgrp -R 0 /opt/app-root && chmod -R g=u /opt/app-root
-
+RUN   chown -R 0 /opt/app-root && \
+      chmod -R g=u /opt/app-root
+	  
 EXPOSE 8080
 
 USER  1001
