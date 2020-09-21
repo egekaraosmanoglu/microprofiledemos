@@ -3,7 +3,7 @@ FROM   registry.access.redhat.com/ubi8/ubi:8.0
 MAINTAINER   Red Hat Training <training@redhat.com>
 
 # command line options to pass to the JVM
-ENV	  JAVA_OPTIONS -Xmx512m
+ENV	  JAVA_OPTIONS -Xmx512m  -Djboss.bind.address=0.0.0.0
 
 
 # Install the Java runtime, create a user for running the app, and set permissions
