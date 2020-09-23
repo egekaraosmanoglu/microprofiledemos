@@ -1,5 +1,6 @@
 package com.shockland.wildfly33.client;
 
+import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -18,7 +19,14 @@ public class ClientController {
 
     @GET
     @Path("/test/{parameter}")
+    @Fallback(fallbackMethod = "fallbackClientMethod")
     public String onClientSide(@PathParam("parameter") String parameter) {
         return service.doSomething(parameter);
+    }
+    
+    
+    private String fallbackClientMethod()
+    {
+    	return "fallbackMethod";
     }
 }
