@@ -26,13 +26,6 @@
       <artifactId>vertx-auth-jwt</artifactId>
       <version>3.8.1</version>
     </dependency>
-    <dependency>
-	<groupId>org.jboss.resteasy</groupId>
-		<artifactId>resteasy-client</artifactId>
-		<version>3.0.24.Final-redhat-1</version>
-		<scope>provided</scope>
-	</dependency>
-
   </dependencies>
   <build>
     <finalName>wildfly33</finalName>
